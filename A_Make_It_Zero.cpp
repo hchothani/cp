@@ -17,43 +17,48 @@ using namespace std;
 
 void fillvi(vector<int> &v, int n)
 {
-  for (int i = 0; i < n; i++)
-  {
-    int in;
-    cin >> in;
-    v.push_back(in);
-  }
+    for (int i = 0; i < n; i++)
+    {
+        int in;
+        cin >> in;
+        v.push_back(in);
+    }
 }
 
 // ===========================================================================
 
 void solve()
 {
-  int a, b, n;
-  cin >> a >> b >> n;
-  vi v;
-  fillvi(v, n);
-  ll sum = b;
-  for (auto num : v)
-  {
-    if (num < a)
-      sum += num;
+    int n;
+    cin >> n;
+    vi v;
+    fillvi(v, n);
+    if (n % 2 == 0)
+    {
+        cout << "2" << endl;
+        cout << "1 " << n << endl;
+        cout << "1 " << n << endl;
+    }
     else
-      sum += a - 1;
-  }
-  cout << sum << endl;
+    {
+        cout << "4" << endl;
+        cout << "1 " << n - 1 << endl;
+        cout << "1 " << n - 1 << endl;
+        cout << n - 1 << ' ' << n << endl;
+        cout << n - 1 << ' ' << n << endl;
+    }
 }
 
 int main()
 {
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-  int t = 1;
-  cin >> t;
-  while (t--)
-  {
-    solve();
-  }
-  return 0;
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
 }
